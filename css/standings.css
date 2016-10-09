@@ -1,0 +1,208 @@
+/* ----------- Problem Colors ----------- */
+.color-A {
+    background-color: #ffff00 !important;
+}
+
+.color-B {
+    background-color: #00BfC0 !important;
+}
+
+.color-C {
+    background-color: #000000 !important;
+    color: #fff;
+}
+
+.color-D {
+    background-color: blueviolet !important;
+    color: #fff;
+}
+
+.color-E {
+    background-color: #75ff75 !important;
+}
+
+.color-F {
+    background-color: white !important;
+}
+
+.color-G {
+    background-color: skyblue !important;
+}
+
+.color-H {
+    background-color: #ffa9b4 !important;
+}
+
+.color-I {
+    background-color: red !important;
+    color: #fff;
+}
+
+.color-J {
+    background-color: #ff6500 !important;
+    color: #fff;
+}
+
+.color-K {
+    background-color: gray !important;
+}
+
+/* ----------- Rest of styles ----------- */
+body {
+    font-family: Arial;
+    font-size: 15px;
+    min-width: 900px;
+}
+
+#header {
+    overflow: auto;
+    display: block;
+}
+
+#header > .logo-right {
+    float: right;
+    padding: 0 30px 0 70px;
+    margin-top: -30px;
+    max-width: 150px;
+}
+
+#header > .logo-left {
+    float: left;
+    padding-left: 35px;
+    max-width: 250px;
+}
+
+#header > h1, #header > h2, #header > span {
+    text-align: center;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+#header > h1 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+#header > h2 {
+    margin-top: 5px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+#header > h2.announce {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#footer {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* -------------- Table styles -------------- */
+
+#scoreboard {
+    margin: 5px auto;
+    width: 100%;
+    border: 2px solid #000;
+    border-spacing: 0;
+}
+
+#scoreboard th {
+    padding: 5px 0;
+    border-bottom: 2px solid #000;
+    border-right: 1px solid #aaa;
+}
+
+#scoreboard td {
+    padding: 0;
+    min-width: 30px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+    border-right: 1px solid #aaa;
+}
+
+#scoreboard td:last-child, #scoreboard th:last-child {
+    border-right: none;
+}
+
+td.team {
+    font-size: 1.1em;
+    text-align: left !important;
+    padding: 3px 0 3px 15px !important;
+}
+
+#scoreboard tr:nth-child(even){
+    background-color: #F0F0F0;
+}
+
+#scoreboard > tfoot td {
+    border-top: 2px solid #000;
+}
+
+#scoreboard td.yes {
+    background-color: #8F8;
+}
+
+#scoreboard td.yes.first {
+    background-color: #0D0;
+}
+
+#scoreboard td.no {
+    background-color: #F88;
+}
+
+#scoreboard td.pending {
+    background-color: #FF8;
+    cursor: pointer;
+}
+
+.muted {
+    font-size: 0.8em;
+    color: #555;
+    display: block;
+}
+
+.text-center {
+    display: block;
+    text-align: center !important;
+}
+
+span.balloon {
+    display: block !important;
+    width: 27px !important;
+    height: 40px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    line-height: 30px !important;
+    background: url("../img/balloon.png") -1px -1px no-repeat #aaa;
+}
+
+.sorting-row-yes {
+    background-color: #33CC33;
+}
+
+.sorting-row-no {
+    background-color: #FF4747;
+}
+
+.accept{
+    color: #00BfC0;
+}
+
+.accept-s{
+    font-weight: normal;
+    font-size: 50px;
+}
+
+.designer{
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}

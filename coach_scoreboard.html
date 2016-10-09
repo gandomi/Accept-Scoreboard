@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="ALI GANDOMI">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="0" http-equiv="expires"/>
+    <meta content="no-cache" http-equiv="cache-control"/>
+    <meta content="no-cache" http-equiv="pragma"/>
+    <title>ACM-ICPC Scoreboard</title>
+    <link href="css/standings.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-ui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script>
+        $(function(){
+
+            function scrolldown(n){
+                setTimeout(function(){
+                    var ID = setInterval(function(){
+                        n += 0.09;
+                        $('html, body').scrollTop(n);
+                        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                            window.clearInterval(ID);
+                            scrollup(n);
+                        }
+                    }, 1);
+                }, 2000);
+            }
+
+            function scrollup(n){
+                setTimeout(function(){
+                    var ID = setInterval(function(){
+                        n -= 1;
+                        $('html, body').scrollTop(n);
+                        if($(window).scrollTop() == 0) {
+                            window.clearInterval(ID);
+                            scrolldown(0);
+                        }
+                    }, 1);
+                }, 1500);
+            }
+
+            function temp(){
+                $('#container').load("summary_old.html",function(){
+                    create_stylish_table();
+                });
+            }
+            temp();
+            setInterval(function(){temp();}, 10000);
+            scrolldown(0);
+        });
+    </script>
+</head>
+<body>
+    <div id="header">
+        <img class="logo-left" src="img/ACM.png" />
+        <img class="logo-right" src="img/sadjad.png" />
+        <h1><span class="accept accept-s">ACCEPT</span></h1>
+        <h2 style="color: #EfEf00"><span class="accept">A</span>ccuracy <span class="accept">C</span>reativity <span class="accept">C</span>hallenge <span class="accept">E</span>xhilaration <span class="accept">P</span>roficiency <span class="accept">T</span>alent</h2>
+        <h2 class="announce">Sadjad University of Technology, Mashhad, Iran</h2>
+    </div> <!-- #header -->
+    <div class="container" id="container">
+
+    </div>
+</body>
+</html>

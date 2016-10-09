@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="ALI GANDOMI">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="0" http-equiv="expires"/>
+    <meta content="no-cache" http-equiv="cache-control"/>
+    <meta content="no-cache" http-equiv="pragma"/>
+    <title>ACM-ICPC Scoreboard</title>
+    <link href="css/standings.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-ui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <!--<script type="application/javascript" src="jquery.min.js"> </script>-->
+    <!--<link href='bootstrap.min.css' rel='stylesheet' type="text/css"/>-->
+    <script>
+        $(function(){
+            $('#container').load("summary_old.html",function(){
+                create_stylish_table();
+
+                $('#final-table').load("summary_final.html", function(){
+                    compare();
+                    slider();
+                });
+                show_team_pic();
+            });
+        });
+    </script>
+    <script language="JavaScript">
+        window.onbeforeunload = confirmExit;
+        function confirmExit() {
+            return "You have attempted to leave this page. Are you sure?";
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <img class="logo-left" src="img/ACM.png" />
+        <img class="logo-right" src="img/sadjad.png" />
+        <h1><span class="accept accept-s">ACCEPT</span></h1>
+        <h2 style="color: #EfEf00"><span class="accept">A</span>ccuracy <span class="accept">C</span>reativity <span class="accept">C</span>hallenge <span class="accept">E</span>xhilaration <span class="accept">P</span>roficiency <span class="accept">T</span>alent</h2>
+        <h2 class="announce">Sadjad University of Technology, Mashhad, Iran</h2>
+    </div> <!-- #header -->
+
+    <div class="container" id="container">
+
+    </div>
+
+    <div id="final-table">
+
+    </div>
+
+    <div class="hide" id="dialog">
+        <img src="team_pic/MSA.jpg" alt="MSA" width="800" height="500">
+    </div>
+</body>
+</html>
