@@ -25,7 +25,7 @@ function create_stylish_table(){
         // team name
         $(this).find("td:not(:lt(4), :last-child)").each(function(){
             var text = $(this).html().split('<br>');
-            $(this).html(text[0] + '<span class="muted"> ' + (text[1] == "PPP" ? "--" : text[1]) + "</span>");
+            $(this).html(text[0] + '<span class="muted"> ' + (text[1] == "PPP" ? "--" : (text[1].indexOf('#') != -1 ? text[1].replace('#', '') : text[1])) + "</span>");
 
             // Add yes no first-yes pending
             if(text[0] != '0' && text[1] == '--'){
@@ -33,6 +33,9 @@ function create_stylish_table(){
             }
             else if(text[0] != '0' && text[1] == 'PPP'){
                 $(this).addClass('pending');
+            }
+            else if(text[0] != '0' && text[1].indexOf('#') != -1){
+                $(this).addClass('yes first');
             }
             else if(text[0] != '0' && text[1] != '--'){
                 $(this).addClass('yes');
@@ -74,18 +77,19 @@ function create_stylish_table(){
     });
 
     // first accept
-    $.getJSON("first_accept.json", function(result){
-        $.each(result, function(i, field){
-            if(field.team_title != "dalghak" && field.team_title != ""){
-                var td = table_body.find('tr:has(td:contains(' + field.team_title + '))').children("td").eq(field.question_title.charCodeAt(0)-61);
-                if(td.hasClass("yes"))
-                    td.addClass("first");
-            }
-        });
-    });
+    // $.getJSON("first_accept.json", function(result){
+    //     $.each(result, function(i, field){
+    //         if(field.team_title != "dalghak" && field.team_title != ""){
+    //             var td = table_body.find('tr:has(td:contains(' + field.team_title + '))').children("td").eq(field.question_title.charCodeAt(0)-61);
+    //             if(td.hasClass("yes"))
+    //                 td.addClass("first");
+    //         }
+    //     });
+    // });
 
     // designer
-    $("table + p").html("<br>Scoreboard redesigned by: Ali Gandomi").addClass("designer");
+    time = new Date();
+    $("table + p").html("<br>Created by: Ali Gandomi<br>Last Update "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds()).addClass("designer");
 }
 
 function compare(){

@@ -69,12 +69,19 @@ Last updated
             <xsl:for-each select="problemSummaryInfo">
 <!-- <problemSummaryInfo attempts="1" index="1" problemid="1" score="73" solutionTime="73"/> -->
 <td>
-<xsl:value-of select="@attempts"/>/<xsl:if test="@isSolved = 'false'">--</xsl:if>
-<xsl:if test="@isSolved = 'true'"><xsl:value-of select="@solutionTime"/></xsl:if>
+<xsl:value-of select="@attempts"/>/<xsl:if test="@isSolved = 'false' and @isPending = 'false'">--</xsl:if><xsl:if test="@isSolved = 'false' and @isPending = 'true'">PPP</xsl:if>
+<xsl:if test="@isSolved = 'true'"><xsl:value-of select="@solutionTime"/><xsl:call-template name="first_accept"><xsl:with-param name="id" select="@index"/><xsl:with-param name="solutionTime" select="@solutionTime"/></xsl:call-template></xsl:if>
 </td>
             </xsl:for-each>
         </xsl:template>
-        <xsl:template name="problemTitle">
+    <xsl:template name="first_accept">
+        <xsl:param name="id" />
+        <xsl:param name="solutionTime" />
+        <xsl:for-each select="/contestStandings/standingsHeader/problem[@id = $id]">
+            <xsl:if test="@bestSolutionTime = $solutionTime">#</xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    <xsl:template name="problemTitle">
             <xsl:for-each select="/contestStandings/standingsHeader/problem">
 <th>&#160;&#160;&#160;&#160;<strong><u><xsl:number format="A" value="@id"/></u></strong>&#160;&#160;&#160;&#160;</th>
             </xsl:for-each>
