@@ -13,25 +13,23 @@
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
-    <!--<script type="application/javascript" src="jquery.min.js"> </script>-->
-    <!--<link href='bootstrap.min.css' rel='stylesheet' type="text/css"/>-->
     <script>
         $(function(){
-            function start(){
-                $('#container').load("summary.html",function(){
-                    create_stylish_table();
-                });
-            }
             start();
             setInterval(function(){start();}, 10000);
         });
     </script>
+    <style>
+        #scoreboard td.pending {
+            cursor: default;
+        }
+    </style>
 </head>
 <body>
     <div id="header">
         <img class="logo-left" src="img/ACM.png" />
         <img class="logo-right" src="img/sadjad.png" />
-        <!--<h1><span class="accept accept-s">ACCEPT 2</span></h1>-->
+        <h1><span class="accept accept-s">ACCEPT 2</span></h1>
         <!--<h2 style="color: #EfEf00"><span class="accept">A</span>ccuracy <span class="accept">C</span>reativity <span class="accept">C</span>hallenge <span class="accept">E</span>xhilaration <span class="accept">P</span>roficiency <span class="accept">T</span>alent</h2>-->
         <!--<h2 class="announce">Sadjad University of Technology, Mashhad, Iran</h2>-->
     </div> <!-- #header -->

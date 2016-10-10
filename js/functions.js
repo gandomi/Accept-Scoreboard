@@ -1,3 +1,9 @@
+function start(){
+    $('#container').load("summary.html",function(){
+        create_stylish_table();
+    });
+}
+
 function create_stylish_table(){
     var table = $("table");
 
