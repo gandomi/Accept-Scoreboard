@@ -1,25 +1,25 @@
 function start(){
     $('#container').load("summary.html",function(){
-        create_stylish_table();
+        create_stylish_table("#container table");
     });
 }
 
-function create_stylish_table(){
-    var table = $("table");
+function create_stylish_table(table_selector){
+    var table = $(table_selector);
 
     // Add tbody thead tfoot
     table.find('tr:nth-child(2), tr:nth-last-child(2)').remove();
     table.find('tr:first').unwrap();
     table.find('tr:first').wrap("<thead></thead>");
-    $("table > tr:not(:last-child, :nth-last-child(2))").wrapAll("<tbody></tbody>");
-    $("table > tr:last-child, table > tr:nth-last-child(2)").wrapAll("<tfoot></tfoot>");
+    $(table_selector + " > tr:not(:last-child, :nth-last-child(2))").wrapAll("<tbody></tbody>");
+    $(table_selector + " > tr:last-child, table > tr:nth-last-child(2)").wrapAll("<tfoot></tfoot>");
 
-    var table_body = $("table tbody");
-    var table_head = $("table thead");
-    var table_foot = $("table tfoot");
+    var table_body = $(table_selector + " tbody");
+    var table_head = $(table_selector + " thead");
+    var table_foot = $(table_selector + " tfoot");
     table.attr("id", "scoreboard");
 
-    $('table tr td, table tr th').each(function(){
+    $(table_selector + ' tr td, ' + table_selector + ' tr th').each(function(){
         var text = $(this).text();
         if(text.indexOf("Total att/solv") != -1)
             $(this).html("attm" + "<br>" + "solv");
@@ -95,7 +95,7 @@ function create_stylish_table(){
 
     // designer
     time = new Date();
-    $("table + p").html("<br>Created by: Ali Gandomi<br>Last Update "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds()).addClass("designer");
+    $(table_selector + " + p").html("<br>Created by: Ali Gandomi<br>Last Update "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds()).addClass("designer");
 }
 
 function compare(){
@@ -173,7 +173,7 @@ function slider(){
                                 five_result_td.addClass('sorting-row-yes');
 
                                 solved.text(parseInt(solved.text()) + 1);
-                                total_time.text(parseInt(total_time.text()) + parseInt(judged) + (_try > 1 ? (_try - 1) * 20 : 0));
+                                total_time.text(parseInt(total_time.text()) + parseInt(judged) + ((_try - 1) * 20));
                                 this_time.text(judged);
                                 tmp1 = attm_solved_part[0];
                                 tmp2 = parseInt(attm_solved_part[1]) + 1;
@@ -186,7 +186,7 @@ function slider(){
                                 tmp2 = parseInt(last_td_in_last_row_part[1]) + 1;
                                 last_td_in_last_row.html(tmp1 + "<br>" + tmp2);
 
-                                var interval_time = (row.index() + 1 <= 5 ? 800 : (row.index() + 1 <= 10 ? 300 : (row.index() + 1 > parseInt(row.siblings("tr:last-child").children("td").eq(0).text()) / 2 ? 80 : 90)));
+                                var interval_time = (row.index() + 1 <= 5 ? 800 : (row.index() + 1 <= 10 ? 300 : (row.index() + 1 > parseInt(row.siblings("tr:last-child").children("td").eq(0).text()) / 2 ? 80 : 100)));
                                 var intervalID = setInterval(function () {
                                     var before_soleved = parseInt(row.prev("tr").children("td").eq(2).text());
                                     var before_time = parseInt(row.prev("tr").children("td").eq(3).text());
@@ -196,7 +196,7 @@ function slider(){
                                             other_row.css('opacity', 1);
                                             five_result_td.removeClass('sorting-row-yes');
                                             set_click_handler();
-                                        }, 2500);
+                                        }, 2000);
                                     }
                                     else{
                                         row.insertBefore(row.prev());
