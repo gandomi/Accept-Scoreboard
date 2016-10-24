@@ -50,6 +50,10 @@ function create_stylish_table(table_selector){
         // uni name
         $(this).find("td:eq(1)").each(function(){
             var text = $(this).html().split('<br>');
+            text[0] = text[0].replace('(', '|');
+            text[0] = text[0].replace(')', '|');
+            text[1] = text[1].replace('(', '|');
+            text[1] = text[1].replace(')', '|');
             $(this).html(text[0] + '<span class="muted"> ' + (text[1] ? text[1] : "") + "</span>");
         });
     });
@@ -296,8 +300,8 @@ function show_team_pic(){
 
     $("#container table tbody tr").each(function(){
         $(this).children("td:eq(1)").click(function(){
-            var name = $(this).text();
-            $( "#dialog img").attr({"src": "team_pic/" + name.slice(0, -1) + ".JPG", "alt": name.slice(0, -1)});
+            var name = $(this).clone().children().remove().end().text();
+            $( "#dialog img").attr({"src": "team_pic/" + name + ".JPG", "alt": name});
             $( "#dialog" ).dialog({
                 show: {
                     effect: "fold",
