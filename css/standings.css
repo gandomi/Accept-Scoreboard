@@ -1,15 +1,14 @@
 /* ----------- Problem Colors ----------- */
 .color-A {
-    background-color: #ffff00 !important;
-}
-
-.color-B {
     background-color: #00BfC0 !important;
 }
 
+.color-B {
+    background-color: pink !important;
+}
+
 .color-C {
-    background-color: #000000 !important;
-    color: #fff;
+    background-color: #75ff75 !important;
 }
 
 .color-D {
@@ -18,11 +17,12 @@
 }
 
 .color-E {
-    background-color: #75ff75 !important;
+    background-color: red !important;
+    color: #fff;
 }
 
 .color-F {
-    background-color: white !important;
+    background-color: #ffff00 !important;
 }
 
 .color-G {
@@ -34,8 +34,7 @@
 }
 
 .color-I {
-    background-color: red !important;
-    color: #fff;
+    background-color: #000000 !important;
 }
 
 .color-J {

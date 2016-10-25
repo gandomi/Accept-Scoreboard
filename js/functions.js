@@ -52,8 +52,12 @@ function create_stylish_table(table_selector){
             var text = $(this).html().split('<br>');
             text[0] = text[0].replace('(', '|');
             text[0] = text[0].replace(')', '|');
-            text[1] = text[1].replace('(', '|');
-            text[1] = text[1].replace(')', '|');
+            console.log(typeof (text[1]));
+            if(text[1])
+            {
+                text[1] = text[1].replace('(', '|');
+                text[1] = text[1].replace(')', '|');
+            }
             $(this).html(text[0] + '<span class="muted"> ' + (text[1] ? text[1] : "") + "</span>");
         });
     });
