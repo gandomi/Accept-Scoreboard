@@ -1,52 +1,54 @@
-/* ----------- Problem Colors ----------- */
+/* ----------- Problem Colors ----------- */ /* abi por: #00BfC0, sabz kam: #75ff75*/
 .color-A {
-    background-color: #00BfC0 !important;
+    background-color: red !important;
+    color: white;
 }
 
 .color-B {
-    background-color: pink !important;
+    background-color: yellow !important;
 }
 
 .color-C {
-    background-color: #75ff75 !important;
+    background-color: #a000a0 !important;
+    color: white;
 }
 
 .color-D {
-    background-color: blueviolet !important;
-    color: #fff;
+    background-color: orange !important;
 }
 
 .color-E {
-    background-color: red !important;
-    color: #fff;
+    background-color: darkblue !important;
+color: white;
 }
 
 .color-F {
-    background-color: #ffff00 !important;
+    background-color: #222 !important;
+    color: white;
 }
 
 .color-G {
-    background-color: skyblue !important;
+    background-color: white !important;
 }
 
 .color-H {
-    background-color: #ffa9b4 !important;
+    background-color: green !important;
+    color: white;
 }
 
 .color-I {
-    background-color: #000000 !important;
+    background-color: #75ff75 !important;
 }
 
 .color-J {
-    background-color: #ff6500 !important;
-    color: #fff;
+    background-color: silver !important;
 }
 
 .color-K {
-    background-color: gray !important;
+    background-color: pink !important;
 }
 
-.color-K {
+.color-L {
     background-color: brown !important;
 }
 

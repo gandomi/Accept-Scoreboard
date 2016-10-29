@@ -1,3 +1,5 @@
+// var first1 = {'rxSadjad University Of Technology':4}; //index of problem column [0 to 11]
+
 function start(){
     $('#container').load("summary.html",function(){
         create_stylish_table("#container table");
@@ -27,12 +29,15 @@ function create_stylish_table(table_selector){
             $(this).html(text.split("/").join("<br>"));
     });
 
-    table_body.find('tr').each(function () {
+    table_body.find('tr').each(function (index_tr) {
         // team name
-        $(this).find("td:not(:lt(4), :last-child)").each(function(){
+        // Duplicate first
+        // var team_name = table_body.find('tr').eq(index_tr).find('td').eq(1).text();
+        $(this).find("td:not(:lt(4), :last-child)").each(function(index_td){
             var text = $(this).html().split('<br>');
             $(this).html(text[0] + '<span class="muted"> ' + (text[1] == "PPP" ? "--" : (text[1].indexOf('#') != -1 ? text[1].replace('#', '') : text[1])) + "</span>");
-
+            // Duplicate first
+            // var duplicate1 = (team_name in first1) && first1[team_name] == index_td;
             // Add yes no first-yes pending
             if(text[0] != '0' && text[1] == '--'){
                 $(this).addClass('no');
@@ -40,7 +45,7 @@ function create_stylish_table(table_selector){
             else if(text[0] != '0' && text[1] == 'PPP'){
                 $(this).addClass('pending');
             }
-            else if(text[0] != '0' && text[1].indexOf('#') != -1){
+            else if(text[0] != '0' && text[1].indexOf('#') != -1 /*&& !duplicate1*/){// Duplicate first
                 $(this).addClass('yes first');
             }
             else if(text[0] != '0' && text[1] != '--'){
@@ -52,7 +57,6 @@ function create_stylish_table(table_selector){
             var text = $(this).html().split('<br>');
             text[0] = text[0].replace('(', '|');
             text[0] = text[0].replace(')', '|');
-            console.log(typeof (text[1]));
             if(text[1])
             {
                 text[1] = text[1].replace('(', '|');
@@ -74,7 +78,7 @@ function create_stylish_table(table_selector){
 
     // table column width
     table_head.find('th:not(2)').css("width", "5%");
-    table_head.find('th:nth-child(2)').css("width", "30%");
+    table_head.find('th:nth-child(2)').css("width", "25%");
 
     // name column
     table_body.find('tr').each(function(){
@@ -135,10 +139,10 @@ function slider(){
         var row = pending.parents("tr:first");
         var other_row = row.siblings('tr');
         pending.css('cursor', 'default');
-        pending.animate({backgroundColor: "#f88"}, 750, 'swing', function () {
-            pending.animate({backgroundColor: '#8f8'}, 750, 'swing', function () {
-                pending.animate({backgroundColor: "#f88"}, 750, 'swing', function () {
-                    pending.animate({backgroundColor: '#8f8'}, 750, 'swing', function () {
+        // pending.animate({backgroundColor: "#f88"}, 750, 'swing', function () {
+        //     pending.animate({backgroundColor: '#8f8'}, 750, 'swing', function () {
+        //         pending.animate({backgroundColor: "#f88"}, 750, 'swing', function () {
+        //             pending.animate({backgroundColor: '#8f8'}, 750, 'swing', function () {
                         pending.animate({backgroundColor: "#f88"}, 750, 'swing', function () {
 
                             var five_result_td = row.children("td:lt(4), td:last-child");
@@ -176,6 +180,10 @@ function slider(){
                                 pending.addClass('yes');
                                 if(first_accept){
                                     pending.addClass("first");
+                                    // if(!(index_text == "Why Do We Fall? Sadjad University Of Technology" && pending.index() == 6/*shomare sotune soal. zero index*/)
+                                    // && !(index_text == "Why Do We Fall? Sadjad University Of Technology" && pending.index() == 4/*shomare sotune soal. zero index*/)){
+                                    //     pending.addClass("first");
+                                    // }
                                 }
                                 other_row.css('opacity', 0.2);
                                 five_result_td.addClass('sorting-row-yes');
@@ -240,10 +248,10 @@ function slider(){
                                 }, 2500);
                             }
                         });
-                    });
-                });
-            });
-        });
+                    // });
+                // });
+            // });
+        // });
     }
 
     function set_click_handler() {
