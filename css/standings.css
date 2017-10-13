@@ -1,30 +1,30 @@
 /* ----------- Problem Colors ----------- */ /* abi por: #00BfC0, sabz kam: #75ff75*/
 .color-A {
-    background-color: red !important;
-    color: white;
-}
-
-.color-B {
-    background-color: yellow !important;
-}
-
-.color-C {
     background-color: #a000a0 !important;
     color: white;
 }
 
+.color-B {
+    background-color: #75ff75 !important;
+}
+
+.color-C {
+    background-color: #222 !important;
+    color: white;
+}
+
 .color-D {
-    background-color: orange !important;
+    background-color: green !important;
+    color: white;
 }
 
 .color-E {
     background-color: darkblue !important;
-color: white;
+    color: white;
 }
 
 .color-F {
-    background-color: #222 !important;
-    color: white;
+    background-color: orange !important;
 }
 
 .color-G {
@@ -32,12 +32,12 @@ color: white;
 }
 
 .color-H {
-    background-color: green !important;
+    background-color: red !important;
     color: white;
 }
 
 .color-I {
-    background-color: #75ff75 !important;
+    background-color: #89ffd8 !important;
 }
 
 .color-J {
@@ -45,11 +45,11 @@ color: white;
 }
 
 .color-K {
-    background-color: pink !important;
+    background-color: yellow !important;
 }
 
 .color-L {
-    background-color: brown !important;
+    background-color: #0d9aa5 !important;
 }
 
 /* ----------- Rest of styles ----------- */
