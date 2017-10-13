@@ -1,4 +1,5 @@
-#Accept Scoreboard
+Accept Scoreboard
+=================
 
 The scoreboard of Accept contests...
 
@@ -38,7 +39,7 @@ git clone https://github.com/gandomi/Accept-Scoreboard.git
 3. If you freeze scoreboard (closing `pc2_board` app) at the end of the contest and you want judge last runs with beautiful motions and effects in the closing ceremony, <kbd>closing_ceremony_scoreboard.html</kbd> is suitable for you.
  It compares the final and before freeze scoreboards and changes the background color of differences to yellow.
  You can click on yellow cells and see the result.
- This file has a feature to [**show team picture**](#how-to-show-team-picture-in-closing-ceremony-scoreboard? "How to use it?") when you click on team name column.
+ This file has a feature to [**show team picture**](#how-to-show-team-picture-in-closing-ceremony-scoreboard "How to use it?") when you click on team name column.
 
 ## How to use closing ceremony scoreboard?
 
