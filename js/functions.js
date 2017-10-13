@@ -326,7 +326,7 @@ function show_team_pic(){
 
     $("#container table tbody tr").each(function(){
         $(this).children("td:eq(1)").click(function(){
-            var name = $(this).clone().children().remove().end().text();
+            var name = $(this).clone().children().remove().end().text().trim();
             $( "#dialog img").attr({"src": "team_pic/" + name + ".JPG", "alt": name});
             $( "#dialog" ).dialog({
                 show: {
