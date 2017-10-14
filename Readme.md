@@ -49,7 +49,7 @@ Then rename <kbd>summary.html</kbd> to <kbd>summary_final.html</kbd> (Located in
 Then run <kbd>closing_ceremony_scoreboard.html</kbd> (**in the backed up directory**), click on yellow cells and see the result.
  
 ## How to show team picture in closing ceremony scoreboard?
-If you want show **team picture** in closing ceremony scoreboard, you must place all team picture in `team_pic` directory and name them in this format:
+If you want show **team picture** in closing ceremony scoreboard, you must place all team picture in `team_pic/` directory and name them in this format:
 
 - `<team name>.JPG`
 
